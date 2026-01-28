@@ -1,0 +1,105 @@
+### ========== MÉDICOS ==========
+
+### 1. Buscar todos os médicos (GET)
+GET http://localhost:8080/api/medicos
+
+### 2. Recuperar médico por ID (GET)
+GET http://localhost:8080/api/medicos/1
+
+### 3. Salvar um novo médico (POST)
+POST http://localhost:8080/api/medicos
+Content-Type: application/json
+
+{
+    "nome": "Dr. João Silva",
+    "crm": "123456",
+    "especialidade": "Cardiologia",
+    "telefone": "(84)99999-0000",
+    "email": "joao@hospital.com"
+}
+
+### 4. Atualizar médico (PUT)
+PUT http://localhost:8080/api/medicos/1
+Content-Type: application/json
+
+{
+    "especialidade": "Cirurgia",
+    "telefone": "(84)98888-0000"
+}
+
+### 5. Deletar médico (DELETE)
+DELETE http://localhost:8080/api/medicos/1
+
+### ========== PACIENTES ==========
+
+### 6. Buscar todos os pacientes (GET)
+GET http://localhost:8080/api/pacientes
+
+### 7. Recuperar paciente por ID (GET)
+GET http://localhost:8080/api/pacientes/1
+
+### 8. Salvar um novo paciente (POST)
+POST http://localhost:8080/api/pacientes
+Content-Type: application/json
+
+{
+    "nome": "Maria Santos",
+    "cpf": "12345678901",
+    "dataNascimento": "1990-05-15",
+    "telefone": "(84)99999-1111",
+    "email": "maria@email.com",
+    "historicoMedico": "Pressão alta controlada"
+}
+
+### 9. Atualizar paciente (PUT)
+PUT http://localhost:8080/api/pacientes/1
+Content-Type: application/json
+
+{
+    "nome": "Maria Santos Silva",
+    "historicoMedico": "Pressão alta e diabetes tipo 2"
+}
+
+### 10. Deletar paciente (DELETE)
+DELETE http://localhost:8080/api/pacientes/1
+
+### ========== DIAGNÓSTICOS ==========
+
+### 11. Buscar todos os diagnósticos (GET)
+GET http://localhost:8080/api/diagnosticos
+
+### 12. Recuperar diagnóstico por ID (GET)
+GET http://localhost:8080/api/diagnosticos/1
+
+### 13. Salvar um novo diagnóstico (POST)
+POST http://localhost:8080/api/diagnosticos
+Content-Type: application/json
+
+{
+    "paciente": {
+        "id": 1
+    },
+    "medico": {
+        "id": 1
+    },
+    "descricao": "Inflamação no pulmão esquerdo",
+    "recomendacoes": "Repouso de 3 dias, antibióticos prescritos"
+}
+
+### 14. Buscar diagnósticos de um paciente (GET)
+GET http://localhost:8080/api/diagnosticos/paciente/1
+
+### 15. Buscar diagnósticos de um médico (GET)
+GET http://localhost:8080/api/diagnosticos/medico/1
+
+### 16. Atualizar diagnóstico (PUT)
+PUT http://localhost:8080/api/diagnosticos/1
+Content-Type: application/json
+
+{
+    "descricao": "Inflamação no pulmão esquerdo - confirmado",
+    "recomendacoes": "Repouso de 5 dias, antibióticos prescritos, acompanhamento em 1 semana"
+}
+
+### 17. Deletar diagnóstico (DELETE)
+DELETE http://localhost:8080/api/diagnosticos/1
